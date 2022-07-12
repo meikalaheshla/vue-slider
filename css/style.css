@@ -35,7 +35,10 @@
 
 }
 
-
+#gallery .image-card {
+    display: none;
+    height: 500px;
+}
 
 #gallery .overlay {
 

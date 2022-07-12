@@ -17,39 +17,48 @@
     <!-- MY CSS -->
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
+
+
+    <!-- VUE JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 
 <body>
-    <main>
-        <section class="container-fluid">
-            <div id="carousel" class="my-5">
-                <button id="button-prev" class="btn mybutton" role="button"><i
-                        class="fa-solid fa-angle-left"></i></button>
-                <div id="gallery">
-                    <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg"
-                        alt="immagine">
-                    <div class="overlay">
+    <div id="root">
+        <main>
 
-                        <h2> Svervegia</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ut adipisci quidem amet
-                            numquam temporibus! Magnam impedit neque mollitia sunt vel aspernatur voluptatem eos, id
-                            cumque
-                            repellendus adipisci hic laborum.</span>
+            <section class="container-fluid">
+                <div id="carousel" class="my-5">
+                    <button id="button-prev" class="btn mybutton" role="button"><i
+                            class="fa-solid fa-angle-left"></i></button>
+                    <div id="gallery">
+                        <div v-for="(image, i) in images" :class="{'d-block' : currentIndex === i}" class="image-card">
+
+                            <img :src=" image.url" alt="image.title">
+                            <div class="overlay">
+
+                                <h2> {{image.title}}</h2>
+                                <span>{{image.description}}</span>
+                            </div>
+                        </div>
+
                     </div>
 
+
+                    <button id="button-play-stop" class="btn " role="button"><i class="fa-solid fa-play"></i></button>
+                    <button id="button-next" class="btn mybutton" role="button"><i
+                            class="fa-solid fa-angle-right"></i></button>
+                    <button id="button-rewind" class="btn " role="button"><i class="fa-solid fa-backward"></i></button>
                 </div>
+                <div id="thumbnails">
+                    <img v-for="(image, i) in images" :class="{active : currentIndex === i }" :src="image.url"
+                        :alt="image.title">
+                </div>
+            </section>
 
+        </main>
 
-                <button id="button-play-stop" class="btn " role="button"><i class="fa-solid fa-play"></i></button>
-                <button id="button-next" class="btn mybutton" role="button"><i
-                        class="fa-solid fa-angle-right"></i></button>
-                <button id="button-rewind" class="btn " role="button"><i class="fa-solid fa-backward"></i></button>
-            </div>
-            <div id="thumbnails"></div>
-        </section>
-
-    </main>
-
+    </div>
 
     <!-- MY JS  -->
     <script src="js/script.js"></script>
