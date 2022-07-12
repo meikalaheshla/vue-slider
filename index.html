@@ -29,7 +29,7 @@
 
             <section class="container-fluid">
                 <div id="carousel" class="my-5">
-                    <button id="button-prev" class="btn mybutton" role="button"><i
+                    <button @click="goToPrev" id="button-prev" class="btn mybutton" role="button"><i
                             class="fa-solid fa-angle-left"></i></button>
                     <div id="gallery">
                         <div v-for="(image, i) in images" :class="{'d-block' : currentIndex === i}" class="image-card">
@@ -46,9 +46,10 @@
 
 
                     <button id="button-play-stop" class="btn " role="button"><i class="fa-solid fa-play"></i></button>
-                    <button id="button-next" class="btn mybutton" role="button"><i
+                    <button @click="goToNext" id="button-next" class="btn mybutton" role="button"><i
                             class="fa-solid fa-angle-right"></i></button>
-                    <button id="button-rewind" class="btn " role="button"><i class="fa-solid fa-backward"></i></button>
+                    <button @click="goToPrev" id="button-rewind" class="btn " role="button"><i
+                            class="fa-solid fa-backward"></i></button>
                 </div>
                 <div id="thumbnails">
                     <img v-for="(image, i) in images" :class="{active : currentIndex === i }" :src="image.url"

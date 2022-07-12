@@ -64,6 +64,16 @@ const root = new Vue({
 
 
 
+    },
+    methods: {
+        goToNext() {
+            this.currentIndex === this.images.length - 1 ? this.currentIndex = 0 : this.currentIndex++
+
+        },
+        goToPrev() {
+            this.currentIndex === 0 ? this.currentIndex = this.images.length - 1 : this.currentIndex--
+
+        }
     }
 })
 
