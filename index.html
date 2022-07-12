@@ -52,8 +52,8 @@
                             class="fa-solid fa-backward"></i></button>
                 </div>
                 <div id="thumbnails">
-                    <img v-for="(image, i) in images" :class="{active : currentIndex === i }" :src="image.url"
-                        :alt="image.title">
+                    <img @click="goToImg(i)" v-for="(image, i) in images" :class="{active : currentIndex === i }"
+                        :src="image.url" :alt="image.title">
                 </div>
             </section>
 
