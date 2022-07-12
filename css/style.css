@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#carousel {
+    width: 800px;
+    height: 500px;
+    position: relative;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+/* GALLERY */
+
+#gallery {
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    /* position: relative; */
+
+}
+
+#gallery img {
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    object-fit: cover;
+    border-radius: 20px;
+
+
+}
+
+
+
+#gallery .overlay {
+
+    /* display: none; */
+    padding: 20px;
+    text-align: justify;
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    background-color: #0000012f;
+}
+
+/* THUMBNAIL */
+
+#thumbnails {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#thumbnails img {
+    border-radius: 20px;
+    overflow-x: auto;
+    width: 18%;
+    height: 100px;
+    filter: grayscale(1);
+}
+
+/* BOTTONI */
+
+.mybutton {
+    position: absolute;
+    transform: translatey(-50%);
+    top: 50%;
+}
+
+
+#button-next {
+    left: 100%;
+}
+
+#button-prev {
+    right: 100%;
+}
+
+#button-play-stop {
+    position: absolute;
+    top: 101%;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+}
+
+#button-rewind {
+    position: absolute;
+
+    top: 101%;
+    right: 35%;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+
+}
+
+/* ACTIVE CLASS */
+
+#thumbnails .active {
+    box-shadow: 0 0 10px blue;
+    filter: grayscale(0);
+}
